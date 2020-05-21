@@ -1,6 +1,7 @@
 import React from 'react';
 import { fetchPosts } from '../actions';
 import { connect } from 'react-redux';
+import Post from './Post';
 
 class PostList extends React.Component {
   componentDidMount() {
@@ -11,14 +12,14 @@ class PostList extends React.Component {
   renderPosts = () => {
     const { posts } = this.props;
     const render = posts.map(post => (
-      <div key={post.id}>{post.body}</div>
+      <Post key={post.id} post={post} />
     ));
     return render;
   }
 
   render() {
     return (
-      <div>{this.renderPosts()}</div>
+      <div className="ui relaxed divided list">{this.renderPosts()}</div>
     );
   }
 }
