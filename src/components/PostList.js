@@ -26,7 +26,6 @@ class PostList extends React.Component {
 
 const mapStateToProps = state => ({
   posts: state.posts,
-  users: state.users,
 });
 
 export default connect(mapStateToProps, { fetchPostUser })(PostList);
